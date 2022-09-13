@@ -69,8 +69,8 @@ let questions = [
 ]
 // WELCOME
 function welcome() {
-  log(chalk.redBright.bold("\n!!RULES!!\n"));
-  log(chalk.greenBright.bold("So here are the rules of the game:\n1. There are only 3 questions.\n2. You have to answer all correctly.\nALL THE BEST!\nLet's begin!!\n----------------------------"));
+  log(chalk.redBright.bold("\nRULES!"));
+  log(chalk.greenBright.bold("\n1. There are only 10 questions.\n2. You have to answer all correctly.\nALL THE BEST!\nLet's begin!!\n----------------------------"));
   readline.keyInPause(chalk.gray('\nPress any key to start the game...'));
   game();
 }
@@ -102,11 +102,11 @@ function checkAnswer(currentQuestion, answer) {
 
 }
 function result() {
-  if (score === 3) {
+  if (score === 10) {
     log(chalk.green.bold('\nCongratulations! You have passed the quiz! 🥳'));
-    log(chalk.green.bold('You have scored a total of 3/3'));
+    log(chalk.green.bold(`You have scored a total of ${score}/${questions.length}`));
   }
-  else if (score >= 2) {
+  else if (score >= 5) {
     log(chalk.green.bold('\nCongratulations! You have passed the quiz! 🥳'));
     log(chalk.green.bold(`You have scored a total of ${score}/${questions.length}`));
   } else if (score >= 1) {
